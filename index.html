@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<p >React</p>
+					<img src="images/React-icon.svg" alt="React" width="500" height="500">
+				</section>
+				<section>
+					<h2>History of React</h2>
+					<ul>
+						<li class="fragment">React is an open-source Javascript library used to create components and user interfaces.</li>
+						<li class="fragment">React is commonly used as a codebase for SPAs (single-page applications).</li>
+						<li class="fragment">React was finally introduced in May 2013.</li>
+						<li class="fragment">In 2014, React really started to gain momentum as important new features were added, such as React Developer Tools as an extension.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Components</h2>
+					<p class="fragment">Component approach</p>
+                    <div>
+                        <div class="fragment">
+                            <p>Functional component</p>
+                            <pre><code data-trim>
+                                function Hello() {
+                                  return <h1>Hello</h1>;
+                                }
+                            </code></pre>
+                        </div>
+                        <div class="fragment">
+                            <p>Class component</p>
+                            <pre><code data-trim>
+                                class Hello extends React.Component {
+                                  render() {
+                                    return <h1>Hello</h1>;
+                                  }
+                                }
+                            </code></pre>
+                        </div>
+                    </div>
+				</section>
+                <section>
+                    <h2>Functional and class components</h2>
+                    <ul>
+                        <li>Functional component are literally simple JavaScript function. A component displays user interface code, often a JSX expression or raw HTML code.</li>
+                        <li class="fragment">Class component, on the other hand, are written based on regular ES6 JavaScript classes.</li>
+                        <li class="fragment">Many developers and libraries are shifting to using functional components.</li>
+                    </ul>
+                </section>
+
+				<section>
+                    <h2>JSX</h2>
+                    <ul>
+                        <li class="fragment">JSX is an extension of the JavaScript language</li>
+                        <li class="fragment">JSX is the syntactic sugar for the function <pre><code data-trim>
+                            React.createElement()
+                        </code></pre></li>
+                    </ul>
+                        <div class="fragment">
+                            <pre><code data-trim>
+                               &lt;div className="anything" /&gt;
+                            </code></pre>
+                        </div>
+                        <div class="fragment">
+                            <pre><code data-trim>
+                               React.createElement('div', {className: 'anything'}, null)
+                            </code></pre>
+                        </div>
+                </section>
+                <section>
+                    <h2>DOM</h2>
+                    <img class="fragment" src="images/Document.jpg" alt="DOM" width="1000">
+                </section>
+                <section>
+                    <h2>Virtual Dom</h2>
+                    <p>The Virtual DOM is a lightweight copy of the regular DOM. </p>
+                    <img class="fragment" src="images/vdom.png" alt="Virtual DOM" width="500">
+                </section>
+                <section>
+                    <h2>State</h2>
+                    <div>
+                        <pre><code data-trim>
+                           const [state, setState] = useState('State');
+                        </code></pre>
+                    </div>
+                    <div class="fragment">
+                        <pre><code data-trim>
+                           setState('changed');
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Hooks</h2>
+                    <ul>
+                        <li class="fragment">React hooks appeared in React 16.8</li>
+                        <li class="fragment">They allow you to use state in a functional component</li>
+                        <li class="fragment">React provides a number of built-in hooks by default</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Hooks</p>
+                    <pre><code data-trim>useState(initialState)</code></pre>
+                    <pre class="fragment"><code data-trim>useEffect(didUpdate)</code></pre>
+                    <pre class="fragment"><code data-trim>useContext(MyContext)</code></pre>
+                    <pre class="fragment"><code data-trim>useReducer(reducer, initialArg, init)</code></pre>
+                </section>
+                <section>
+                    <h2>Routing</h2>
+                    <img class="fragment" src="images/react-router.jpg" alt="Router" width="500">
+                </section>
+                <section>
+                    <h2>Advantages of React</h2>
+                    <ul>
+                        <li class="fragment">Easy to learn.</li>
+                        <li class="fragment">High level of flexibility and maximum responsiveness.</li>
+                        <li class="fragment">Virtual DOM.</li>
+                        <li class="fragment">Combined with ES6/7.</li>
+                        <li class="fragment">Linking data from larger to smaller.</li>
+                        <li class="fragment">A 100% open-source JavaScript library.</li>
+                        <li class="fragment">Incredibly lightweight.</li>
+                        <li class="fragment">Migration between versions is usually very easy.</li>
+                    </ul>
+                </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
